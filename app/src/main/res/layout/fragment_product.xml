@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/view"
+        style="@style/CustomCard.ProductCard">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/product_name_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="28dp"
+                android:fontFamily="@string/roboto_medium"
+                android:text="О товаре"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/short_description_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="28dp"
+                android:layout_marginRight="28dp"
+                android:layout_marginTop="28dp"
+                android:fontFamily="@string/roboto_regular"
+                android:gravity="center"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. "
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/grey"
+                android:textSize="14sp"/>
+
+            <ImageView
+                android:id="@+id/product_img"
+                android:layout_width="wrap_content"
+                android:layout_height="160dp"
+                android:layout_marginTop="8dp"
+                android:paddingBottom="16dp"
+                android:paddingRight="24dp"
+                android:src="@drawable/radio_image"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingBottom="24dp"
+                android:paddingTop="24dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/header_count_tx"
+                        style="@style/TextHeaderCost"
+                        android:layout_marginBottom="8dp"
+                        android:text="Количество"
+                        android:textAllCaps="true"
+                        android:textSize="10sp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/minus_count_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_remove_black_small"/>
+
+                        <TextView
+                            android:id="@+id/product_count_tx"
+                            style="@style/LargeTextCost"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:text="2"
+                            android:textSize="25sp"/>
+
+                        <ImageView
+                            android:id="@+id/plus_count_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_add_black_small"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/header_cost_tx"
+                        style="@style/TextHeaderCost"
+                        android:layout_marginBottom="8dp"
+                        android:text="Стоимость"
+                        android:textAllCaps="true"
+                        android:textSize="10sp"/>
+
+                    <TextView
+                        android:id="@+id/cost_product_tx"
+                        style="@style/LargeTextCost"
+                        android:layout_gravity="center_horizontal"
+                        android:text="2567"
+                        android:textSize="25sp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/view"
+        android:orientation="vertical">
+
+
+        <Button
+            android:id="@+id/buy_btn"
+            style="@style/CustomButton"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:text="В КОРЗИНУ"
+            android:theme="@style/StartBtn"/>
+    </LinearLayout>
+</LinearLayout>

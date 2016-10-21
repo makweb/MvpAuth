@@ -9,20 +9,12 @@ import com.softdesign.mvpauth.ui.custom_views.AuthPanel;
  * Created by Makweb on 17.10.2016.
  */
 
-public interface IAuthView {
-
-    void showMessage(String message);
-    void showError(Throwable e);
-
-    void showLoad();
-    void hideLoad();
+public interface IAuthView extends IView{
 
     IAuthPresenter getPresenter();
 
     void showLoginBtn();
     void hideLoginBtn();
-
-    //void testShowLoginCard();
 
     @Nullable
     AuthPanel getAuthPanel();

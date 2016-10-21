@@ -61,7 +61,7 @@ public class AuthPanel extends LinearLayout {
     @Override
     protected void onRestoreInstanceState(Parcelable state) {
         SavedState savedState = (SavedState) state;
-        super.onRestoreInstanceState(state);
+        super.onRestoreInstanceState(savedState.getSuperState());
         setCustomState(savedState.state);
     }
 

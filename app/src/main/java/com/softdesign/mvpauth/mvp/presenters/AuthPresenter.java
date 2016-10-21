@@ -1,7 +1,5 @@
 package com.softdesign.mvpauth.mvp.presenters;
 
-import android.support.annotation.Nullable;
-
 import com.softdesign.mvpauth.mvp.models.AuthModel;
 import com.softdesign.mvpauth.mvp.views.IAuthView;
 import com.softdesign.mvpauth.ui.custom_views.AuthPanel;
@@ -10,10 +8,9 @@ import com.softdesign.mvpauth.ui.custom_views.AuthPanel;
  * Created by Makweb on 17.10.2016.
  */
 
-public class AuthPresenter implements IAuthPresenter {
+public class AuthPresenter extends AbstractPresenter<IAuthView> implements IAuthPresenter {
     private static AuthPresenter ourInstance = new AuthPresenter();
     private AuthModel mAuthModel;
-    private IAuthView mAuthView;
 
     private AuthPresenter() {
         mAuthModel = new AuthModel();
@@ -21,16 +18,6 @@ public class AuthPresenter implements IAuthPresenter {
 
     public static AuthPresenter getInstance() {
         return ourInstance;
-    }
-
-    @Override
-    public void takeView(IAuthView authView) {
-        mAuthView = authView;
-    }
-
-    @Override
-    public void dropView() {
-        mAuthView = null;
     }
 
     @Override
@@ -43,12 +30,6 @@ public class AuthPresenter implements IAuthPresenter {
                 getView().showLoginBtn();
             }
         }
-    }
-
-    @Nullable
-    @Override
-    public IAuthView getView() {
-        return mAuthView;
     }
 
     @Override

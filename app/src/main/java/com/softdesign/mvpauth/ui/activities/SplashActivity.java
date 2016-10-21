@@ -1,4 +1,4 @@
-package com.softdesign.mvpauth;
+package com.softdesign.mvpauth.ui.activities;
 
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.softdesign.mvpauth.BuildConfig;
+import com.softdesign.mvpauth.R;
 import com.softdesign.mvpauth.mvp.presenters.AuthPresenter;
 import com.softdesign.mvpauth.mvp.presenters.IAuthPresenter;
 import com.softdesign.mvpauth.mvp.views.IAuthView;
@@ -15,7 +17,11 @@ import com.softdesign.mvpauth.ui.custom_views.AuthPanel;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class RootActivity extends AppCompatActivity implements IAuthView, View.OnClickListener{
+/**
+ * Created by Makweb on 21.10.2016.
+ */
+
+public class SplashActivity extends AppCompatActivity implements IAuthView, View.OnClickListener{
     AuthPresenter mPresenter = AuthPresenter.getInstance();
 
     @BindView(R.id.coordinator_container)
@@ -35,7 +41,7 @@ public class RootActivity extends AppCompatActivity implements IAuthView, View.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_root);
+        setContentView(R.layout.activity_splash);
         ButterKnife.bind(this);
         mPresenter.takeView(this);
         mPresenter.initView();
